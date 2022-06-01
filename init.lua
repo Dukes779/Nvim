@@ -15,3 +15,6 @@ require('telescope-config')
 require('gitsign-config')
 require('dashboard-config')
 require('blankline-config')
+require('comment-config')
+
+
