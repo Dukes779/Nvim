@@ -19,6 +19,7 @@ return require 'packer'.startup(function()
     use 'windwp/nvim-ts-autotag'
     use { 'nvim-treesitter/nvim-treesitter', run = "TSUpdate" }
     use 'glepnir/dashboard-nvim'
+    use 'tami5/lspsaga.nvim'
     use 'p00f/nvim-ts-rainbow'
     use 'akinsho/bufferline.nvim'
     use 'windwp/nvim-autopairs'
