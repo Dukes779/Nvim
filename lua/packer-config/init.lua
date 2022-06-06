@@ -1,9 +1,19 @@
-return require 'packer'.startup(function()
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  vim.api.nvim_command('packadd packer.nvim')
+end
+
+
+return require 'packer'.startup({function(use)
     use 'wbthomason/packer.nvim'
-    use({
+    use {
 	"catppuccin/nvim",
-	as = "catppuccin"
-})
+	as = "catppuccin",
+    event = "BufWinEnter",
+    config ="require('colorschemes-config')"
+}
     use 'kyazdani42/nvim-tree.lua'
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
@@ -14,14 +24,14 @@ return require 'packer'.startup(function()
     use 'onsails/lspkind.nvim'
     use {
   'nvim-lualine/lualine.nvim',
-  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }, event ="BufWinEnter", config="require('lualine-config')"
 }
     use 'windwp/nvim-ts-autotag'
     use { 'nvim-treesitter/nvim-treesitter', run = "TSUpdate" }
-    use 'glepnir/dashboard-nvim'
+    use {'glepnir/dashboard-nvim', event ="BufWinEnter" , config ="require('dashboard-config')"}
     use 'tami5/lspsaga.nvim'
     use 'p00f/nvim-ts-rainbow'
-    use 'akinsho/bufferline.nvim'
+    use { 'akinsho/bufferline.nvim', event ="BufWinEnter" , config ="require('bufferline-config')"}
     use 'windwp/nvim-autopairs'
     use 'norcalli/nvim-colorizer.lua'
     use {
@@ -30,10 +40,20 @@ return require 'packer'.startup(function()
   require('gitsigns').setup()
   end
 }
-    use 'folke/which-key.nvim'
+    use {'folke/which-key.nvim', event ='BufWinEnter', config ="require('whichkey-config')"}
     use {
   'nvim-telescope/telescope.nvim',
-   requires = { {'nvim-lua/plenary.nvim'} }
+   requires = { {'nvim-lua/plenary.nvim'} },
+   event ='BufWinEnter' , 
+   config ="require('telescope-config')"
 }
 use 'terrortylor/nvim-comment'
-end)
+end,
+config = {
+  display = {
+    open_fn = function()
+      return require('packer.util').float({ border = 'single' })
+    end
+  }
+}
+})

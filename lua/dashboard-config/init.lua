@@ -26,9 +26,10 @@ vim.g.dashboard_custom_header = {
 
 vim.g.dashboard_custom_section = {
   a = {description = {'  Find File          '}, command = 'Telescope find_files'},
-  d = {description = {'  Search Text        '}, command = 'Telescope live_grep'},
-  b = {description = {'  Recent Files       '}, command = 'Telescope oldfiles'},
-  e = {description = {'  Config             '}, command = 'edit ~/.config/nvim'}
+  d = {description = {'  Search Text        '}, command = 'Telescope live_grep' },
+  b = {description = {'  Recent Files       '}, command = 'Telescope oldfiles'  },
+  e = {description = {'  Config-Lua         '}, command = 'edit ~/.config/nvim' },
+  c = {description = {'  Config-Dwm         '}, command = 'edit ~/.config/suckless.2.0/suckless/dwm' }
 }
 vim.g.dashboard_custom_footer = {'"And I swear this. If you ever betray me, I will burn you alive." - Daenerys Targaryen '}
 
