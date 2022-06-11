@@ -14,11 +14,12 @@ return require 'packer'.startup({function(use)
     event = "BufWinEnter",
     config ="require('colorschemes-config')"
 }
-    use 'kyazdani42/nvim-tree.lua'
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-    use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-    use "lukas-reineke/indent-blankline.nvim"
+    use {'kyazdani42/nvim-tree.lua', config="require('nvim-tree-config')", requires = 'kyazdani42/nvim-web-devicons' }
+    use {'neovim/nvim-lspconfig', config="require('lsp-config.language-servers')"}
+    use 'hrsh7th/nvim-cmp'  -- Autocompletion plugin
+    use { 'hrsh7th/cmp-nvim-lsp' , config="require('lsp-config.nvim-cmp')" } -- LSP source for nvim-cmp
+    use { "lukas-reineke/indent-blankline.nvim", config = "require('blankline-config')", event ='BufRead' }
+    use { "lukas-reineke/lsp-format.nvim" , config = "require('lsp-format-config')", cmd = "Format"}
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
     use 'onsails/lspkind.nvim'
@@ -27,17 +28,17 @@ return require 'packer'.startup({function(use)
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }, event ="BufWinEnter", config="require('lualine-config')"
 }
     use 'windwp/nvim-ts-autotag'
-    use { 'nvim-treesitter/nvim-treesitter', run = "TSUpdate" }
+    use { 'nvim-treesitter/nvim-treesitter', run = "TSUpdate" , config="require('treesitter-config')"}
     use {'glepnir/dashboard-nvim', event ="BufWinEnter" , config ="require('dashboard-config')"}
     use 'tami5/lspsaga.nvim'
-    use 'p00f/nvim-ts-rainbow'
+    use {'p00f/nvim-ts-rainbow', after='nvim-treesitter'}
     use { 'akinsho/bufferline.nvim', event ="BufWinEnter" , config ="require('bufferline-config')"}
-    use 'windwp/nvim-autopairs'
-    use 'norcalli/nvim-colorizer.lua'
+    use { 'windwp/nvim-autopairs', config="require('autopairs-config')"}
+    use {'norcalli/nvim-colorizer.lua', config="require('colorizer-config')", event='BufRead'}
     use {
   'lewis6991/gitsigns.nvim',
   config = function()
-  require('gitsigns').setup()
+  require('gitsigns').setup{ current_line_blame = true }
   end
 }
     use {'folke/which-key.nvim', event ='BufWinEnter', config ="require('whichkey-config')"}
@@ -47,7 +48,7 @@ return require 'packer'.startup({function(use)
    event ='BufWinEnter' , 
    config ="require('telescope-config')"
 }
-use 'terrortylor/nvim-comment'
+use { 'terrortylor/nvim-comment', config="require('comment-config')" }
 end,
 config = {
   display = {
