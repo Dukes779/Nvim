@@ -1,15 +1,15 @@
 local wk = require("which-key")
 local mappings = {
-   q = {":q<cr>", "Quit"},
-   Q = {":wq<cr>", "Save & Quit"},
-   w = {":w<cr>", "Save"},
-   x = {":bdelete<cr>", "Close"},
-   l = {":luafile %<cr>", "Reload lua"},
-   p = {":PackerSync<cr>", "PackerSync"},
-   c = {":term<cr>", "Terminal"},
-   t = {":Telescope find_files<cr>", "Find Files"},
+   q = {":q<cr>", "  Quit"},
+   s = {":wq<cr>", "﬚  Save & Quit"},
+   w = {":w<cr>", "  Save"},
+   x = {":bdelete<cr>", "  Close"},
+   l = {":luafile %<cr>", "勒  Reload lua"},
+   p = {":PackerSync<cr>", "  PackerSync"},
+   c = {":term<cr>", "  Terminal"},
+   t = {":Telescope find_files<cr>", "  Find Files"},
    i = {
-       name = "lsp",
+       name = "  lsp",
        i = {":LspInfo<cr>", "Connected Language Servers" },
        k = {"<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help"},
        K = {"<cmd>Lspsaga hover_doc<cr>", "Hover Commands"},
@@ -24,7 +24,8 @@ local mappings = {
        e = {"<cmd>Lspsaga show_line_diagnostics<cr>", "Show Line Diagnostics"},
        n = {"<cmd>Lspsaga diagnostic_jump_next<cr>", "Go To Next Diagnostic"},
        N = {"<cmd>Lspsaga diagnostic_jump_prev<cr>", "Go To Previous Diagnostic"}
-   }
+   },
+   v = {":vsplit<cr>", " vsplit" }
 }
 local opts = {prefix = '<leader>'}
 wk.register(mappings, opts)
