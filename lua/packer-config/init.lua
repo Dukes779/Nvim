@@ -32,7 +32,7 @@ return require 'packer'.startup({function(use)
     use {'glepnir/dashboard-nvim', event ="BufWinEnter" , config ="require('dashboard-config')"}
     use 'tami5/lspsaga.nvim'
     use {'p00f/nvim-ts-rainbow', after='nvim-treesitter'}
-    use { 'akinsho/bufferline.nvim', event ="BufWinEnter" , config ="require('bufferline-config')"}
+    use { 'akinsho/bufferline.nvim', tag = "v1.*", event ="BufWinEnter" , config ="require('bufferline-config')"}
     use { 'windwp/nvim-autopairs', config="require('autopairs-config')"}
     use {'norcalli/nvim-colorizer.lua', config="require('colorizer-config')", event='BufRead'}
     use {
