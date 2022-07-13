@@ -8,12 +8,12 @@ end
 
 return require 'packer'.startup({function(use)
     use 'wbthomason/packer.nvim'
-    use {
+    use ({
 	"catppuccin/nvim",
 	as = "catppuccin",
-    event = "BufWinEnter",
-    config ="require('colorschemes-config')"
-}
+    -- event = "BufWinEnter",
+    config="require('colorschemes-config')"
+})
     use {'kyazdani42/nvim-tree.lua', config="require('nvim-tree-config')", requires = 'kyazdani42/nvim-web-devicons' }
     use {'neovim/nvim-lspconfig', config="require('lsp-config.language-servers')"}
     use 'hrsh7th/nvim-cmp'  -- Autocompletion plugin

@@ -1,5 +1,4 @@
 local catppuccin = require("catppuccin")
-
 -- configure it
 catppuccin.transparent_background = false
 catppuccin.styles = {
@@ -42,7 +41,7 @@ catppuccin.integrations = {
 	nvimtree = {
 		enabled = true,
 		show_root = false,
-		transparent_panel = true,
+		transparent_panel = false,
 	},
 	neotree = {
 		enabled = false,
@@ -54,7 +53,7 @@ catppuccin.integrations = {
 		enabled = true,
 		colored_indent_levels = true,
 	},
-	dashboard = false,
+	dashboard = true,
 	neogit = true,
 	vim_sneak = false,
 	fern = false,
@@ -64,8 +63,8 @@ catppuccin.integrations = {
 	lightspeed = false,
 	ts_rainbow = true,
 	hop = false,
-	notify = true,
-	telekasten = true,
+	notify = false,
+	telekasten = false,
 	symbols_outline = true,
 }
 -- Lua
