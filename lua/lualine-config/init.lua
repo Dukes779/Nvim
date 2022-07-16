@@ -26,7 +26,9 @@ require('lualine').setup {
   },
   tabline = {},
   extensions = {},
-  options = { theme = 'iceberg_dark', section_separators = '', component_separators = '' }
+  options = { theme = 'gruvbox', section_separators = '', component_separators = '' }
 }
 
---- iceberg_dark
+---THEMES
+--- iceberg_dark catpuccin
+--  gruvbox-baby

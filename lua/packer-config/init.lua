@@ -8,12 +8,13 @@ end
 
 return require 'packer'.startup({function(use)
     use 'wbthomason/packer.nvim'
-    use ({
-	"catppuccin/nvim",
-	as = "catppuccin",
-    -- event = "BufWinEnter",
-    config="require('colorschemes-config')"
-})
+--     use ({
+-- 	"catppuccin/nvim",
+-- 	as = "catppuccin",
+--     -- event = "BufWinEnter",
+--     config="require('colorschemes-config')"
+-- })
+    use { 'luisiacc/gruvbox-baby' , config="require('gruvbox')" , event = "BufWinEnter"}
     use {'kyazdani42/nvim-tree.lua', config="require('nvim-tree-config')", requires = 'kyazdani42/nvim-web-devicons' }
     use {'neovim/nvim-lspconfig', config="require('lsp-config.language-servers')"}
     use 'hrsh7th/nvim-cmp'  -- Autocompletion plugin
@@ -28,6 +29,7 @@ return require 'packer'.startup({function(use)
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }, event ="BufWinEnter", config="require('lualine-config')"
 }
     use 'windwp/nvim-ts-autotag'
+    use 'nvim-telescope/telescope-symbols.nvim'
     use { 'nvim-treesitter/nvim-treesitter', run = "TSUpdate" , config="require('treesitter-config')"}
     use {'glepnir/dashboard-nvim', event ="BufWinEnter" , config ="require('dashboard-config')"}
     use 'tami5/lspsaga.nvim'
