@@ -14,7 +14,9 @@ return require 'packer'.startup({function(use)
 --     -- event = "BufWinEnter",
 --     config="require('colorschemes-config')"
 -- })
-    use { 'luisiacc/gruvbox-baby' , config="require('gruvbox')" , event = "BufWinEnter"}
+    -- use { 'luisiacc/gruvbox-baby' , config="require('gruvbox')" , event = "BufWinEnter"}
+    -- use { 'folke/tokyonight.nvim' , config="require('tokyo')",  event = "BufWinEnter"}
+    use { "EdenEast/nightfox.nvim" , config="require('gotham')", event = "BufWinEnter" } 
     use {'kyazdani42/nvim-tree.lua', config="require('nvim-tree-config')", requires = 'kyazdani42/nvim-web-devicons' }
     use {'neovim/nvim-lspconfig', config="require('lsp-config.language-servers')"}
     use 'hrsh7th/nvim-cmp'  -- Autocompletion plugin

@@ -107,14 +107,6 @@ _G.packer_plugins = {
     path = "/home/dukes/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  ["gruvbox-baby"] = {
-    config = { "require('gruvbox')" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/dukes/.local/share/nvim/site/pack/packer/opt/gruvbox-baby",
-    url = "https://github.com/luisiacc/gruvbox-baby"
-  },
   ["indent-blankline.nvim"] = {
     config = { "require('blankline-config')" },
     loaded = false,
@@ -149,6 +141,14 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/dukes/.local/share/nvim/site/pack/packer/opt/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["nightfox.nvim"] = {
+    config = { "require('gotham')" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/dukes/.local/share/nvim/site/pack/packer/opt/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["nvim-autopairs"] = {
     config = { "require('autopairs-config')" },
@@ -243,6 +243,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('nvim-tree-config')
+time([[Config for nvim-tree.lua]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 require('autopairs-config')
@@ -251,6 +255,10 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for nvim-comment]], true)
 require('comment-config')
 time([[Config for nvim-comment]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('treesitter-config')
+time([[Config for nvim-treesitter]], false)
 -- Config for: cmp-nvim-lsp
 time([[Config for cmp-nvim-lsp]], true)
 require('lsp-config.nvim-cmp')
@@ -259,18 +267,10 @@ time([[Config for cmp-nvim-lsp]], false)
 time([[Config for nvim-lspconfig]], true)
 require('lsp-config.language-servers')
 time([[Config for nvim-lspconfig]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require('nvim-tree-config')
-time([[Config for nvim-tree.lua]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\nQ\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\23current_line_blame\2\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require('treesitter-config')
-time([[Config for nvim-treesitter]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-ts-rainbow ]]
@@ -286,7 +286,7 @@ vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'indent-blankline.nvim', 'nvim-colorizer.lua'}, { event = "BufRead *" }, _G.packer_plugins)]]
-vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'which-key.nvim', 'gruvbox-baby', 'dashboard-nvim', 'bufferline.nvim', 'lualine.nvim', 'telescope.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'nightfox.nvim', 'bufferline.nvim', 'dashboard-nvim', 'which-key.nvim', 'lualine.nvim', 'telescope.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
