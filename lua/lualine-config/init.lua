@@ -26,7 +26,7 @@ require('lualine').setup {
   },
   tabline = {},
   extensions = {},
-  options = { theme = 'nightfox', section_separators = '', component_separators = '' }
+  options = { theme = 'gruvbox', section_separators = '', component_separators = '' }
 }
 
 ---THEMES
