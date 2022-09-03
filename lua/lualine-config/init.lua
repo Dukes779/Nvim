@@ -26,7 +26,8 @@ require('lualine').setup {
   },
   tabline = {},
   extensions = {},
-  options = { theme = 'gruvbox', section_separators = '', component_separators = '' }
+  -- options = { theme = '', section_separators = '', component_separators = '' }
+  options = { section_separators = '', component_separators = '' }
 }
 
 ---THEMES

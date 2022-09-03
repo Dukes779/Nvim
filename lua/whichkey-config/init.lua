@@ -25,7 +25,8 @@ local mappings = {
        n = {"<cmd>Lspsaga diagnostic_jump_next<cr>", "Go To Next Diagnostic"},
        N = {"<cmd>Lspsaga diagnostic_jump_prev<cr>", "Go To Previous Diagnostic"}
    },
-   v = {":vsplit<cr>", " vsplit" }
+   v = {":vsplit<cr>", " vsplit" },
+   m = {":TransparentToggle<cr>", "RANS"}
 }
 local opts = {prefix = '<leader>'}
 wk.register(mappings, opts)

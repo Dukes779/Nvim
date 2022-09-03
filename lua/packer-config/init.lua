@@ -14,9 +14,9 @@ return require 'packer'.startup({function(use)
 --     -- event = "BufWinEnter",
 --     config="require('colorschemes-config')"
 -- })
-    use { 'luisiacc/gruvbox-baby' , config="require('gruvbox')" , event = "BufWinEnter"}
-    -- use { 'folke/tokyonight.nvim' , config="require('tokyo')",  event = "BufWinEnter"}
-    -- use { "EdenEast/nightfox.nvim" , config="require('gotham')", event = "BufWinEnter" } 
+    -- use { 'luisiacc/gruvbox-baby' , config="require('gruvbox')" , event = "BufWinEnter"}
+    use { 'folke/tokyonight.nvim' , config="require('tokyo')",  event = "BufWinEnter"}
+    -- use { "EdenEast/nightfox.nvim" , config="require('gotham')"} 
 --     use({
 --     'rose-pine/neovim',
 --     as = 'rose-pine',
@@ -25,6 +25,7 @@ return require 'packer'.startup({function(use)
 --         vim.cmd('colorscheme rose-pine')
 --     end
 -- })
+    use { "xiyaowong/nvim-transparent" ,config="require('trans')"}
     use {'kyazdani42/nvim-tree.lua', config="require('nvim-tree-config')", requires = 'kyazdani42/nvim-web-devicons' }
     use {'neovim/nvim-lspconfig', config="require('lsp-config.language-servers')"}
     use 'hrsh7th/nvim-cmp'  -- Autocompletion plugin
