@@ -26,8 +26,8 @@ require('lualine').setup {
   },
   tabline = {},
   extensions = {},
-  -- options = { theme = '', section_separators = '', component_separators = '' }
-  options = { section_separators = '', component_separators = '' }
+  -- options = { theme = 'decays, section_separators = '', component_separators = '' }
+  options = {  theme = 'decay' , section_separators = '', component_separators = '' }
 }
 
 ---THEMES

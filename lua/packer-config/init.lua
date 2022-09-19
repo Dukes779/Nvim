@@ -15,7 +15,7 @@ return require 'packer'.startup({function(use)
 --     config="require('colorschemes-config')"
 -- })
     -- use { 'luisiacc/gruvbox-baby' , config="require('gruvbox')" , event = "BufWinEnter"}
-    use { 'folke/tokyonight.nvim' , config="require('tokyo')",  event = "BufWinEnter"}
+    -- use { 'folke/tokyonight.nvim' , config="require('tokyo')",  event = "BufWinEnter"}
     -- use { "EdenEast/nightfox.nvim" , config="require('gotham')"} 
 --     use({
 --     'rose-pine/neovim',
@@ -25,13 +25,14 @@ return require 'packer'.startup({function(use)
 --         vim.cmd('colorscheme rose-pine')
 --     end
 -- })
-    use { "xiyaowong/nvim-transparent" ,config="require('trans')"}
+    -- use { "xiyaowong/nvim-transparent" ,config="require('trans')"}
     use {'kyazdani42/nvim-tree.lua', config="require('nvim-tree-config')", requires = 'kyazdani42/nvim-web-devicons' }
     use {'neovim/nvim-lspconfig', config="require('lsp-config.language-servers')"}
     use 'hrsh7th/nvim-cmp'  -- Autocompletion plugin
     use { 'hrsh7th/cmp-nvim-lsp' , config="require('lsp-config.nvim-cmp')" } -- LSP source for nvim-cmp
     use { "lukas-reineke/indent-blankline.nvim", config = "require('blankline-config')", event ='BufRead' }
     use { "lukas-reineke/lsp-format.nvim" , config = "require('lsp-format-config')", cmd = "Format"}
+    use {'decaycs/decay.nvim', as = 'decay',config ="require('decays')"}
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
     use 'onsails/lspkind.nvim'
